@@ -1,10 +1,9 @@
 import cv2
 
-# Assuming your custom modules exist
 from yolo_detection import perform_yolo_detection
 from msdtr import msdtr_algorithm
 from cbam import CBAM
-from efficientnet_b0 import EfficientNet  # Assuming a custom implementation for efficientnet-b0
+from efficientnet_b0 import EfficientNet  
 
 def main(image_path):
   """
@@ -37,10 +36,8 @@ def main(image_path):
                    filtered_detections[detection_id] = detection_info
         return filtered_detections
 
-    # ... (after obtaining detections and distances)
-    filtered_detections = filter_detections_by_distance(detections, distances, 5.0)  # Threshold in meters (adjust as needed)
+    filtered_detections = filter_detections_by_distance(detections, distances, 5.0)  
 
-    # Use filtered_detections for further processing (e.g., visualization)
 
 
   except FileNotFoundError as e:
